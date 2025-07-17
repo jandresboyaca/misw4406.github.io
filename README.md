@@ -16,3 +16,21 @@ Una vez con todas las dependencias puede ejectuar el servidor. Si usa el paráme
 ```bash
 bundle exec jekyll serve --livereload
 ```
+
+### Uso de devcontainers
+
+Si prefiere un entorno ya configurado, este repositorio incluye soporte para [devcontainers](https://containers.dev){:target="_blank"}.
+Puede abrirlo directamente en Codespaces o en Visual Studio Code. El archivo de configuración sugerido es:
+
+```json
+{
+  "name": "misw4406",
+  "image": "mcr.microsoft.com/vscode/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postCreateCommand": "bundle install"
+}
+```
+
+El contenedor se basa en Python 3.12 y ejecuta `bundle install` automáticamente tras su creación.
